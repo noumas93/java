@@ -1,0 +1,69 @@
+public class ValidityCheck
+{
+
+    public static boolean isValidSSNR(String number)
+    {
+
+	int sum=0;
+        int x=0;
+	for (int i=0;i<10; ++i)
+	    {
+    
+    
+		int a = Character.digit(number.charAt(i), 10);
+        
+		if ((i % 2)==0) 
+		    {
+	     
+	        
+		       	if (a*2>9)
+ 				 {
+				     sum=(a*2)%10+1;
+				     x=x+sum;
+				     System.out.println(x);
+				     System.out.println((a*2)%10+1);
+				 }
+			else
+			    {
+				System.out.println(a*2);
+				System.out.println(x);
+				sum=(a*2);
+			        sum=x+sum;
+			    }
+		    }
+		else
+		    {
+			if (a*1>9)
+			    {
+			     sum=(a*1)%10+1;
+		      	     x=x+sum;
+			     System.out.println(x);
+
+			      System.out.println((a*1)%10+1);
+			    }
+			else
+			    {
+				System.out.println(a*1);
+				
+				sum=(a*2);
+				 x=x+sum;
+				 System.out.println(x);
+			    }
+		    }
+	    }
+	System.out.println(x);
+	return true;
+    }
+    
+
+    public static void main(String[] args) {
+        String personNumber = "9103259876";
+
+        if (isValidSSNR(personNumber)) {
+            System.out.println("Giltigt nummer.");
+        } else {
+            System.out.println("Ej ett giltigt nummer.");
+        }
+    }
+}
+
